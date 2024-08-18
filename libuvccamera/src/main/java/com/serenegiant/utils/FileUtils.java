@@ -152,6 +152,20 @@ public class FileUtils {
         return mDateTimeFormat.format(now.getTime());
     }
 
+    /**
+     * Retrieves the path of external storage mounts on the device.
+     * 
+     * This method executes a system command to list all mounted file systems
+     * and parses the output to identify the paths of external storage (e.g., SD cards)
+     * and internal storage. It ignores lines that contain "secure" or "asec" 
+     * as these are not relevant for external mounts.
+     * 
+     * @return A {@code String} representing the path of the external storage mount.
+     *         If no external storage is found, it returns {@code null}.
+     * 
+     * @throws IOException If an I/O error occurs when executing the command or reading the output.
+     * @throws SecurityException If the application does not have permission to execute the command.
+     */
     public static String getExternalMounts() {
         String externalpath = null;
         String internalpath = "";
