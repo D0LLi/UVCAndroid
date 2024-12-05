@@ -31,6 +31,7 @@
  */
 
 import java.io.*;
+import java.security.SecureRandom;
 import java.util.*;
 import java.awt.image.*;
 import javax.imageio.*;
@@ -842,7 +843,7 @@ final class TJUnitTest {
     byte[] srcBuf, dstBuf = null;
     YUVImage dstImage = null;
     TJCompressor tjc = null;
-    Random r = new Random();
+    Random r = new SecureRandom();
 
     try {
       tjc = new TJCompressor();
